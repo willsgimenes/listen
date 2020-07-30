@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LISTEN</title>
+</head>
+<body>
+
+<div id="main">
+
+    <h1>Take a break, listen</h1>
+
+</div>
+
+<script type="text/javascript">
+
+    const musics = [
+        {
+            name: 'isn\'t she lovely',
+            link: 'RfHQOlHJczU'
+        },
+        {
+            name: 'MINMI - スマホ feat. SHINGO★西成',
+            link: 'dmni9zPUVNU',
+        },
+        {
+            name: 'friday I\'m love',
+            link: 'mGgMZpGYiy8'
+        },
+        {
+            name: 'ryuusei',
+            link: 'Y_pyeUgqs68',
+        },
+        {
+            name: 'That\'s what I like',
+            link: 'PMivT7MJ41M',
+        },
+        {
+            name: 'That\'s life',
+            link: 'TnlPtaPxXfc',
+        }
+    ]
+
+    const randomizer = (min = 0, max = musics.length - 1) => {
+        const _min = Math.ceil(min);
+        const _max = Math.floor(max);
+
+        return Math.floor(Math.random() * (_max - _min + 1)) + min;
+    }
+
+    function createCookie(name, value) {
+        let currentDate = new Date();
+        let expirationDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate()+1, 0, 0, 0);
+        let expires = "; expires=" + expirationDate.toGMTString();
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    function getCookie(cname) {
+      const name = cname + "=";
+      const decodedCookie = decodeURIComponent(document.cookie);
+      const ca = decodedCookie.split(';');
+      for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function checkSong() {
+        const songIndex = getCookie('index');
+
+        if (songIndex === '') createCookie('index', randomizer());
+    }
+
+    checkSong();
+
+    const el =
+        `<iframe id="ytplayer" type="text/html" width="640" height="360"
+            src="https://www.youtube.com/embed/${musics[getCookie('index')].link}?autoplay=0"
+            frameborder="0"></iframe>`;
+
+    const target = document.getElementById('main');
+
+    // yes I can use a simple template string, but you know, let's remember the old days
+    target.innerHTML += el;
+    const nameEl = document.createElement('h1');
+    nameEl.innerText = `${musics[getCookie('index')].name}`;
+
+    // see! back to 2020 ;-)
+    target.innerHTML += `<p>${musics[getCookie('index')].name}</p>`;
+
+    target.innerHTML +=
+        `<small>
+            <a href="https://www.youtube.com/watch?v=${musics[getCookie('index')].link}" target="_blank">
+                Are you getting <strong>video unavailable</strong>? Use this link instead
+            </a>
+        </small>`;
+
+
+    target.innerHTML +=
+        `<p id="notice"><i>Yes, this page intend to not have any style :-)</i></p>`
+
+
+</script>
+
+<style>
+    html, body, #main {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    #main {
+        background: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+    }
+
+    #notice {
+        position: absolute;
+        bottom: 0;
+    }
+
+</style>
+
+</body>
+</html>
