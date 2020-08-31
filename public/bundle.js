@@ -44,29 +44,30 @@
     	},
     	{
     		name: "TANUKI - BABYBABYの夢 - Sample from Mariya Takeuchi Yume no Tsuzuki",
-    		link: "ET6657PH9gQ"
+    		source: "sc",
+    		trackId: "172682287",
+    		link: "tanukimusic/tanuki-babybaby-fc-ep-free",
+    		link_author: "tanukimusic",
+    		author: "TANUKI"
     	},
     	{
     		name: "超時空要塞マクロス　リン・ミンメイ　天使の絵の具～ランナー",
     		link: "K8dcS3vKWRA"
+    	},
+    	{
+    		name: "HIM - Killing Loneliness [OFFICIAL VIDEO]",
+    		link: "CQ9JdDAbKH0"
     	}
     ];
 
-    const randomizer = (min = 0, max = musics.length - 1) => {
-        const _min = Math.ceil(min);
-        const _max = Math.floor(max);
-
-        return Math.floor(Math.random() * (_max - _min + 1)) + min;
-    };
-
-    function createCookie(name, value) {
+    const createCookie = (name, value) => {
         let currentDate = new Date();
         let expirationDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 1, 0, 0, 0);
         let expires = "; expires=" + expirationDate.toGMTString();
         document.cookie = name + "=" + value + expires + "; path=/";
-    }
+    };
 
-    function getCookie(cname) {
+    const getCookie = (cname) => {
         const name = cname + "=";
         const decodedCookie = decodeURIComponent(document.cookie);
         const ca = decodedCookie.split(';');
@@ -80,17 +81,7 @@
             }
         }
         return "";
-    }
-
-    function checkSong() {
-        const songIndex = getCookie('index');
-
-        if (songIndex === '') createCookie('index', randomizer());
-    }
-
-    checkSong();
-
-    const song_el = musics[getCookie('index')];
+    };
 
     const buildPlayer = (song) => {
         if (song.hasOwnProperty('source')) {
@@ -102,13 +93,28 @@
 
         const el =
             `<iframe id="ytplayer" type="text/html" width="640" height="360"
-        src="https://www.youtube.com/embed/${song_el.link}?autoplay=0"
+        src="https://www.youtube.com/embed/${song.link}?autoplay=0"
         frameborder="0"></iframe>`;
 
         return el;
     };
 
+    const randomizer = (min = 0, max) => {
+        const _min = Math.ceil(min);
+        const _max = Math.floor(max.length);
 
+        return Math.floor(Math.random() * (_max - _min)) + min;
+    };
+
+    const checkSong = (songs) => {
+        const songIndex = getCookie('index');
+
+        if (songIndex === '') createCookie('index', randomizer(0, songs));
+    };
+
+    checkSong(musics);
+
+    const song_el = musics[getCookie('index')];
     const target = document.getElementById('main');
 
     // yes I can use a simple template string, but you know, let's remember the old days

@@ -41,10 +41,18 @@
     },
     {
         "name": "TANUKI - BABYBABYの夢 - Sample from Mariya Takeuchi Yume no Tsuzuki",
-        "link": "ET6657PH9gQ"
+        "source": "sc",
+        "trackId": "172682287",
+        "link": "tanukimusic/tanuki-babybaby-fc-ep-free",
+        "link_author": "tanukimusic",
+        "author": "TANUKI"
     },
     {
         "name": "超時空要塞マクロス　リン・ミンメイ　天使の絵の具～ランナー",
         "link": "K8dcS3vKWRA"
+    },
+    {
+        "name": "HIM - Killing Loneliness [OFFICIAL VIDEO]",
+        "link": "CQ9JdDAbKH0"
     }
 ]
