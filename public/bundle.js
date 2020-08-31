@@ -1,55 +1,55 @@
 (function () {
     'use strict';
 
-    const musics = [
-        {
-            name: 'isn\'t she lovely',
-            link: 'RfHQOlHJczU'
-        },
-        {
-            name: 'MINMI - スマホ feat. SHINGO★西成',
-            link: 'dmni9zPUVNU',
-        },
-        {
-            name: 'friday I\'m love',
-            link: 'mGgMZpGYiy8'
-        },
-        {
-            name: 'ryuusei',
-            link: 'Y_pyeUgqs68',
-        },
-        {
-            name: 'That\'s what I like',
-            link: 'PMivT7MJ41M',
-        },
-        {
-            name: 'That\'s life',
-            link: 'TnlPtaPxXfc',
-        },
-        {
-            name: 'Anri - Good Bye Boogie Dance',
-            source: 'sc',
-            trackId: '258801448',
-            link: 'dick-richardson-671540421/anri-good-bye-boogie-dance',
-            link_author: 'dick-richardson-671540421',
-            author: 'Internet Aristocrat',
-        },
-        {
-            name: 'Anri - I Can\'t Stop The Loneliness (悲しみがとまらない )',
-            source: 'sc',
-            trackId: '278895430',
-            link: 'floyd-rieger/i-cant-stop-the-loneliness',
-            link_author: 'floyd-rieger',
-            author: 'Osaka Flocka Flame',
-        },
-        {
-            name: 'TANUKI - BABYBABYの夢 - Sample from Mariya Takeuchi Yume no Tsuzuki',
-            link: 'ET6657PH9gQ',
-        },
-        {
-            name: '超時空要塞マクロス　リン・ミンメイ　天使の絵の具～ランナー',
-            link: 'K8dcS3vKWRA',
-        },
+    var musics = [
+    	{
+    		name: "isn't she lovely",
+    		link: "RfHQOlHJczU"
+    	},
+    	{
+    		name: "MINMI - スマホ feat. SHINGO★西成",
+    		link: "dmni9zPUVNU"
+    	},
+    	{
+    		name: "friday I'm love",
+    		link: "mGgMZpGYiy8"
+    	},
+    	{
+    		name: "ryuusei",
+    		link: "Y_pyeUgqs68"
+    	},
+    	{
+    		name: "That's what I like",
+    		link: "PMivT7MJ41M"
+    	},
+    	{
+    		name: "That's life",
+    		link: "TnlPtaPxXfc"
+    	},
+    	{
+    		name: "Anri - Good Bye Boogie Dance",
+    		source: "sc",
+    		trackId: "258801448",
+    		link: "dick-richardson-671540421/anri-good-bye-boogie-dance",
+    		link_author: "dick-richardson-671540421",
+    		author: "Internet Aristocrat"
+    	},
+    	{
+    		name: "Anri - I Can't Stop The Loneliness (悲しみがとまらない )",
+    		source: "sc",
+    		trackId: "278895430",
+    		link: "floyd-rieger/i-cant-stop-the-loneliness",
+    		link_author: "floyd-rieger",
+    		author: "Osaka Flocka Flame"
+    	},
+    	{
+    		name: "TANUKI - BABYBABYの夢 - Sample from Mariya Takeuchi Yume no Tsuzuki",
+    		link: "ET6657PH9gQ"
+    	},
+    	{
+    		name: "超時空要塞マクロス　リン・ミンメイ　天使の絵の具～ランナー",
+    		link: "K8dcS3vKWRA"
+    	}
     ];
 
     const randomizer = (min = 0, max = musics.length - 1) => {
