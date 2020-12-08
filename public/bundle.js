@@ -57,6 +57,14 @@
     	{
     		name: "HIM - Killing Loneliness [OFFICIAL VIDEO]",
     		link: "CQ9JdDAbKH0"
+    	},
+    	{
+    		name: "Eir Aoi『Iris』",
+    		link: "3RSZGS3IItg"
+    	},
+    	{
+    		name: "LiSA - Catch the Moment",
+    		link: "wW80mkZaYxY"
     	}
     ];
 
