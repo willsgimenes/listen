@@ -65,6 +65,10 @@
     	{
     		name: "LiSA - Catch the Moment",
     		link: "wW80mkZaYxY"
+    	},
+    	{
+    		name: "𝙹 𝙰 𝙿 𝙰 𝙽 𝙴 𝚂 𝙴 シティーポップ City Pop/Funk 𝙰 𝙾 𝚁 Compilation パート #2",
+    		link: "nlEPCDxXf78"
     	}
     ];
 
