@@ -124,10 +124,21 @@
         if (songIndex === '') createCookie('index', randomizer(0, songs));
     };
 
+    /**
+     * Do not edit directly
+     * Generated on Sun, 28 Feb 2021 02:16:42 GMT
+     */
+    const TOKEN_ALIAS_COLOR_BRAND_SECONDARY = "#ff4365"; // secondary color
+
     checkSong(musics);
 
     const song_el = musics[getCookie('index')];
     const target = document.getElementById('main');
+    const title_el = document.createElement('h1');
+
+    title_el.style.color = TOKEN_ALIAS_COLOR_BRAND_SECONDARY;
+    title_el.innerHTML = 'Take a break listen';
+    target.appendChild(title_el);
 
     // yes I can use a simple template string, but you know, let's remember the old days
     target.innerHTML += buildPlayer(song_el);

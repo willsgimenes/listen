@@ -14,7 +14,8 @@
     "npm-run-all": "^4.1.5",
     "rollup": "^2.40.0",
     "rollup-plugin-terser": "^7.0.2",
-    "serve": "^11.3.2"
+    "serve": "^11.3.2",
+    "@willsgimenes/neon-city-light-tokens": "latest"
   },
   "scripts": {
     "build": "rollup -c",

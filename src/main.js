@@ -4,10 +4,17 @@ import { getCookie } from './utils/cookies';
 import buildPlayer from './components/player';
 import checkSong from './utils/song';
 
+import { TOKEN_ALIAS_COLOR_BRAND_SECONDARY } from '@willsgimenes/neon-city-light-tokens/dist/web/brand#1/tokens.es6'
+
 checkSong(musics);
 
 const song_el = musics[getCookie('index')];
 const target = document.getElementById('main');
+const title_el = document.createElement('h1')
+
+title_el.style.color = TOKEN_ALIAS_COLOR_BRAND_SECONDARY
+title_el.innerHTML = 'Take a break listen'
+target.appendChild(title_el)
 
 // yes I can use a simple template string, but you know, let's remember the old days
 target.innerHTML += buildPlayer(song_el);

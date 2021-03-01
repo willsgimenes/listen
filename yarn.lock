@@ -86,6 +86,11 @@
   dependencies:
     "@types/node" "*"
 
+"@willsgimenes/neon-city-light-tokens@latest":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@willsgimenes/neon-city-light-tokens/-/neon-city-light-tokens-1.2.0.tgz#db636b96e678f2772f031aa92c722217c236a100"
+  integrity sha512-QrCj/OX/HfaxyU77ti17yVuunCzR/Kw529h6hzNZNs3P5+c6VUajp1tU5ZWC5gOurRAnB7ZBnlrbRjZbtYMzfQ==
+
 "@zeit/schemas@2.6.0":
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/@zeit/schemas/-/schemas-2.6.0.tgz#004e8e553b4cd53d538bd38eac7bcbf58a867fe3"
