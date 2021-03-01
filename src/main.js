@@ -22,16 +22,16 @@ const nameEl = document.createElement('h1');
 nameEl.innerText = `${musics[getCookie('index')].name}`;
 
 // see! back to 2020 ;-)
-target.innerHTML += `<p>${musics[getCookie('index')].name}</p>`;
+target.innerHTML += `<p style="color: ${TOKEN_ALIAS_COLOR_BRAND_SECONDARY}">${musics[getCookie('index')].name}</p>`;
 
 if (!song_el.hasOwnProperty('source')) {
     target.innerHTML +=
         `<small>
-        <a href="https://www.youtube.com/watch?v=${musics[getCookie('index')].link}" target="_blank">
+        <a style="color: ${TOKEN_ALIAS_COLOR_BRAND_SECONDARY}" href="https://www.youtube.com/watch?v=${musics[getCookie('index')].link}" target="_blank">
             Are you getting <strong>video unavailable</strong>? Use this link instead
         </a>
     </small>`;
 }
 
 target.innerHTML +=
-    `<p id="notice"><i>Yes, this page intend to not have any style :-)</i></p>`
+    `<p id="notice" style="color: ${TOKEN_ALIAS_COLOR_BRAND_SECONDARY}"><i>Yes, this page intend to not have any style :-)</i></p>`
